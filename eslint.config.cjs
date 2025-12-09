@@ -1,28 +1,31 @@
-// eslint.config.cjs
-module.exports = {
-    root: true,
-    env: {
-        node: true,
-        es2021: true
-    },
-    parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module"
-    },
-    plugins: [
-        "security",
-        "redos",
-        "regexp"
-    ],
-    extends: [],
-    rules: {
-        // RULES KHUSUS REDoS
-        "redos/no-vulnerable": "error",
-        "security/detect-non-literal-regexp": "error",
-        "regexp/no-super-linear-backtracking": "warn",
+import security from "eslint-plugin-security";
+import redos from "eslint-plugin-redos";
+import regexp from "eslint-plugin-regexp";
 
-        // RULE lainnya untuk keamanan
-        "security/detect-eval-with-expression": "warn",
-        "security/detect-non-literal-fs-filename": "warn"
+export default [
+    {
+        files: ["**/*.js"],
+
+        languageOptions: {
+            ecmaVersion: "latest",
+            sourceType: "module"
+        },
+
+        plugins: {
+            security,
+            redos,
+            regexp
+        },
+
+        rules: {
+
+            "redos/no-vulnerable": "error",
+            "security/detect-non-literal-regexp": "error",
+            "regexp/no-super-linear-backtracking": "warn",
+
+
+            "security/detect-eval-with-expression": "warn",
+            "security/detect-non-literal-fs-filename": "warn"
+        }
     }
-};
+];
