@@ -1,8 +1,8 @@
-import security from "eslint-plugin-security";
-import redos from "eslint-plugin-redos";
-import regexp from "eslint-plugin-regexp";
+const security = require("eslint-plugin-security");
+const redos = require("eslint-plugin-redos");
+const regexp = require("eslint-plugin-regexp");
 
-export default [
+module.exports = [
     {
         files: ["**/*.js"],
 
@@ -18,12 +18,13 @@ export default [
         },
 
         rules: {
+            // MATIKAN plugin ReDoS yang pakai JAR
+            "redos/no-vulnerable": "off",
 
-            "redos/no-vulnerable": "error",
+            // Gunakan plugin regexp untuk deteksi pola super-linear / ReDoS
+            "regexp/no-super-linear-backtracking": "error",
+
             "security/detect-non-literal-regexp": "error",
-            "regexp/no-super-linear-backtracking": "warn",
-
-
             "security/detect-eval-with-expression": "warn",
             "security/detect-non-literal-fs-filename": "warn"
         }
