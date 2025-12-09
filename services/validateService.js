@@ -1,4 +1,4 @@
 export function isValidUsername(input) {
-  const safeRegex = /^[a-zA-Z0-9]+$/;
-  return regex.test(input);
+    const regex = /^[A-Za-z0-9]{3,20}$/;
+    return regex.test(input);
 }
