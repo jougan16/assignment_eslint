@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "lint:json": "eslint . -f json -o eslint-report.json || true",
-    "start": "node server.js"
+    "start": "node test.js"
   },
   "devDependencies": {
     "eslint": "^9.39.1",
