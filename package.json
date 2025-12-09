@@ -1,0 +1,19 @@
+{
+  "name": "case4-redos-input-validator",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:json": "eslint . -f json -o eslint-report.json || true",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "eslint-plugin-redos": "^4.5.0",
+    "eslint-plugin-regexp": "^2.10.0",
+    "eslint-plugin-security": "^3.0.1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
